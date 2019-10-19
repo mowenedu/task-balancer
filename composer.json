@@ -1,5 +1,5 @@
 {
-  "name": "xingbei437/task-balancer",
+  "name": "xingbei437/x_task-balancer",
   "description": "lightweight and powerful task load balancing. Fork form toplan/task-balancer",
   "license": "MIT",
   "keywords": ["task", "balance", "load balancing"],
