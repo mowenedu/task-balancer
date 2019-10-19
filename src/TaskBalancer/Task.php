@@ -37,7 +37,8 @@ class Task
      *
      * @var Driver[]
      */
-    protected $drivers = [];
+    private $drivers = [];
+    private $totalDriverWeight = 0;
 
     /**
      * backup drivers.
@@ -271,27 +272,16 @@ class Task
      */
     public function getDriverNameByWeight()
     {
-        $count = $base = 0;
-        $map = [];
-        foreach ($this->drivers as $driver) {
-            $count += $driver->weight;
-            if ($driver->weight) {
-                $max = $base + $driver->weight;
-                $map[] = [
-                    'min'    => $base,
-                    'max'    => $max,
-                    'driver' => $driver->name,
-                ];
-                $base = $max;
-            }
-        }
-        if ($count <= 0) {
+        if ($this->totalDriverWeight <= 0) {
             return;
         }
-        $number = mt_rand(0, $count - 1);
-        foreach ($map as $data) {
-            if ($number >= $data['min'] && $number < $data['max']) {
+        $number = mt_rand(0, $totalDriverWeight - 1);
+        foreach ($this->drivers as $driver) {
+            if ($number <= $driver->weight) {
                 return $data['driver'];
+            }
+            else{
+                $number -= $driver->weight;
             }
         }
     }
@@ -312,6 +302,7 @@ class Task
         extract($props);
         $driver = Driver::create($this, $name, $weight, $backup, $work);
         $this->drivers[$name] = $driver;
+        $this->totalDriverWeight += $weight;
         $this->callHookHandler('afterCreateDriver', $driver);
 
         return $driver;
@@ -360,7 +351,9 @@ class Task
         if (!$this->hasDriver($driver)) {
             return;
         }
+        $driverObj = $this->getDriver($driver);
         $this->removeFromBackupDrivers($driver);
+        $this->totalDriverWeight -= $driverObj->weight;
         unset($this->drivers[$driver]);
     }
 

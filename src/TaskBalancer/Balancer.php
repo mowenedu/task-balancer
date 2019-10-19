@@ -57,7 +57,7 @@ class Balancer
         if (isset($opts['data'])) {
             $task->data($opts['data']);
         }
-        $driverName = isset($opts['driver']) ?: null;
+        $driverName = $opts['driver'] ?? null;
 
         return $task->run($driverName);
     }

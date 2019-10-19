@@ -13,4 +13,5 @@
 
 [Usage] (https://github.com/toplan/task-balancer/blob/master/README.md)
 
+# License
 MIT
