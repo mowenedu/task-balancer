@@ -275,10 +275,10 @@ class Task
         if ($this->totalDriverWeight <= 0) {
             return;
         }
-        $number = mt_rand(0, $totalDriverWeight - 1);
+        $number = mt_rand(0, $this->totalDriverWeight - 1);
         foreach ($this->drivers as $driver) {
             if ($number <= $driver->weight) {
-                return $data['driver'];
+                return $dirver->name;
             }
             else{
                 $number -= $driver->weight;
