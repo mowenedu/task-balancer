@@ -4,7 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/xingbei437/x_task-balancer.svg)](https://packagist.org/packages/xingbei437/x_task-balancer)
 
 
-# Fork form [toplan/task-balancer](https://github.com/toplan/task-balancer)
+# Fork form [xingbei437/task-balancer](https://github.com/xingbei437/task-balancer)
 
 ## Change
 
