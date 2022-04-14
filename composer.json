@@ -1,12 +1,12 @@
 {
-  "name": "xingbei437/x_task-balancer",
-  "description": "lightweight and powerful task load balancing. Fork form toplan/task-balancer",
+  "name": "mowenedu/x_task-balancer",
+  "description": "lightweight and powerful task load balancing. Fork form xingbei437/task-balancer",
   "license": "MIT",
   "keywords": ["task", "balance", "load balancing"],
   "authors": [
     {
-      "name": "xingbei437",
-      "email": "xingbei437@163.com"
+      "name": "mowenedu",
+      "email": "2314601153@qq.com"
     }
   ],
   "require": {
