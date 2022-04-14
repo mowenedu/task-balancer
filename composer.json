@@ -16,5 +16,11 @@
     "psr-4": {
       "Toplan\\TaskBalance\\": "src/TaskBalancer/"
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/mowenedu/task-balancer.git"
+    }
+  ]
 }
